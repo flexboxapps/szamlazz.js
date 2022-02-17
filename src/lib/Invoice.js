@@ -87,6 +87,8 @@ class Invoice {
 
     if (this._options.seller) {
       o += this._options.seller._generateXML(indentLevel)
+    } else {
+      o += XMLUtils.wrapWithElement('elado', [], indentLevel)
     }
 
     o += this._options.buyer._generateXML(indentLevel)
