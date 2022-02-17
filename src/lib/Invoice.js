@@ -60,9 +60,6 @@ class Invoice {
     assert(this._options.language instanceof Constants.Interface.Language,
       'Valid Language field missing from invoice options')
 
-    assert(typeof this._options.seller === 'undefined' || this._options.seller instanceof Seller,
-      'The provided optional Seller field is invalid')
-
     assert(this._options.buyer instanceof Buyer,
       'Valid Buyer field missing from invoice options')
 

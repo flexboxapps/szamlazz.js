@@ -119,9 +119,9 @@ let invoice = new szamlazz.Invoice({
   paymentMethod: szamlazz.PaymentMethod.BankTransfer, // optional, default: BankTransfer
   currency: szamlazz.Currency.Ft, // optional, default: Ft
   language: szamlazz.Language.Hungarian, // optional, default: Hungarian
-  seller: seller, // the seller, required
-  buyer: buyer, // the buyer, required
-  items: [ soldItem1, soldItem2 ], // the sold items, required
+  seller, // the seller, optional
+  buyer, // the buyer, required
+  items: [soldItem1, soldItem2], // the sold items, required
   prepaymentInvoice: false // prepayment/deposit invoice should be issued, optional, default: false
   invoiceTemplate: szamlazz.InvoiceTemplate.printFriendly, // type of invoice template (pdf)
 })
