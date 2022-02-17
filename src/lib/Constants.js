@@ -45,6 +45,16 @@ class TaxSubject {
   }
 }
 
+class InvoiceTemplate {
+  constructor (value) {
+    this.value = value
+  }
+
+  toString () {
+    return this.value
+  }
+}
+
 exports.setup = function (_module) {
   _module = _module || {}
 
@@ -102,7 +112,16 @@ exports.setup = function (_module) {
     NoTaxID: new TaxSubject(-1, 'Has no Hungarian VAT ID')
   }
 
-  _module.Interface = { Currency, Language, PaymentMethod, TaxSubject }
+  _module.InvoiceTemplate = {
+    beauty: new InvoiceTemplate('SzlaMost'),
+    retro: new InvoiceTemplate('SzlaTomb'),
+    printFriendly: new InvoiceTemplate('Szla8cm'),
+    traditional: new InvoiceTemplate('SzlaNoEnv'),
+    deliveryNote: new InvoiceTemplate('szlafuvarlevelesalap'),
+    envelopeFriendly: new InvoiceTemplate('SzlaAlap'),
+  }
+
+  _module.Interface = { Currency, Language, PaymentMethod, TaxSubject, InvoiceTemplate }
 
   return _module
 }

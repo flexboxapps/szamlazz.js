@@ -122,7 +122,8 @@ let invoice = new szamlazz.Invoice({
   seller: seller, // the seller, required
   buyer: buyer, // the buyer, required
   items: [ soldItem1, soldItem2 ], // the sold items, required
-  prepaymentInvoice: false // prepayment/deposit invoice should be issued, optional, default: false 
+  prepaymentInvoice: false // prepayment/deposit invoice should be issued, optional, default: false
+  invoiceTemplate: szamlazz.InvoiceTemplate.printFriendly, // type of invoice template (pdf)
 })
 ```
 
